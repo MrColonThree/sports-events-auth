@@ -59,7 +59,7 @@ const Login = () => {
           Login
         </h2>
         {error && (
-          <div className="text-red-500 text-center border-red-600 border-2 rounded-lg p-5 mb-5">
+          <div className="text-red-500 text-center  rounded-lg p-3 mb-5">
             {error}
           </div>
         )}

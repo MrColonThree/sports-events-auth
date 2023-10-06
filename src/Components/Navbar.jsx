@@ -58,14 +58,16 @@ function ProfileMenu() {
       <MenuHandler>
         {user && (
           <div className="flex gap-2 items-center">
-            <p className="text-lg font-semibold text-blue-600">{user.displayName}</p>
+            <p className="text-lg font-semibold text-blue-600">
+              {user.displayName}
+            </p>
             <Button
               variant="text"
               color="blue-gray"
               className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
             >
               <img
-                className="rounded-full w-12"
+                className="rounded-full w-10"
                 src={
                   user.photoURL ||
                   "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
@@ -148,22 +150,40 @@ export function CustomizeNavbar() {
         </NavLink>
       </li>
       {!user && (
-        <li>
-          <NavLink
-            to="/login"
-            className={({ isActive, isPending }) =>
-              isPending
-                ? "pending"
-                : isActive
-                ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
-                : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
-            }
-            aria-current="page"
-            variant="small"
-          >
-            Login
-          </NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink
+              to="/register"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+                  : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
+              }
+              aria-current="page"
+              variant="small"
+            >
+              Register
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/login"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+                  : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
+              }
+              aria-current="page"
+              variant="small"
+            >
+              Login
+            </NavLink>
+          </li>
+        </>
       )}
     </ul>
   );
@@ -172,7 +192,7 @@ export function CustomizeNavbar() {
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900 max-w-screen-xl">
         <NavLink
           to="/"
-          className="mr-4 ml-2  text-2xl font-bold cursor-pointer text-black"
+          className="mr-4 ml-2 my-2  text-2xl font-bold cursor-pointer text-black"
         >
           SPORTACULAR360
         </NavLink>

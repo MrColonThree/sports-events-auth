@@ -3,14 +3,15 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { BsEyeSlashFill, BsEyeFill, BsGoogle, BsGithub } from "react-icons/bs";
 
 import { AuthContext } from "../../providers/AuthProviders";
-import { updateProfile } from "firebase/auth";
 
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 const Register = () => {
   const navigate = useNavigate();
   const authInfo = useContext(AuthContext);
   const { createUser, googleSignIn, githubSignIn } = authInfo;
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
   const handleSignIn = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -19,13 +20,27 @@ const Register = () => {
     const confirmPassword = e.target.password1.value;
     console.log("SignIn: ", name, email, password);
     if (password !== confirmPassword) {
-      return alert("Password don't match");
+      return setError("Password don't match");
     }
+    if (password.length < 6) {
+      return setError("Password should be at least 6 characters long.");
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      return setError("Password should contain at least one capital letter.");
+    }
+
+    if (!/[^a-zA-Z0-9]/.test(password)) {
+      return setError(
+        "Password should contain at least one special character."
+      );
+    }
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         if (name) {
-          return updateProfile(user, { displayName: name }).then(() => {
+          updateProfile(user, { displayName: name }).then(() => {
             console.log("User created successfully with display name:", name);
             e.target.reset();
             navigate("/");
@@ -131,7 +146,7 @@ const Register = () => {
             </button>
           </div>
         </div>
-
+        {error && <div className="text-red-500 rounded-lg  mb-5">{error}</div>}
         <div className="flex items-start mb-5">
           <div className="flex items-center h-5">
             <input
@@ -148,7 +163,7 @@ const Register = () => {
         <div className="mb-5">
           <h2>
             Already have an account?
-             <NavLink className="text-blue-600 font-semibold" to="/login">
+            <NavLink className="text-blue-600 font-semibold" to="/login">
               Login
             </NavLink>
           </h2>
