@@ -6,6 +6,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import { AiFillInfoCircle } from "react-icons/ai";
 const Register = () => {
   const navigate = useNavigate();
   const authInfo = useContext(AuthContext);
@@ -120,6 +121,10 @@ const Register = () => {
                 <BsEyeFill></BsEyeFill>
               )}
             </button>
+          </div>
+          <div className=" mt-2 flex gap-2">
+            <AiFillInfoCircle className="text-xl"></AiFillInfoCircle><p className="text-sm">Use at least 6 characters, one
+            uppercase, one lowercase and one special character.</p>
           </div>
         </div>
         <div className="mb-6">

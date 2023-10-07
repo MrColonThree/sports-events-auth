@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
-import Blog from "../pages/Blog/Blog";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Contact from "../pages/Contact/Contact";
 import PrivateRoute from "./PrivateRoute";
 import ServiceDetails from "../pages/Home/Services/ServiceDetails";
+import Blogs from "../pages/Blogs/Blogs";
+import BlogDetails from "../pages/Blogs/BlogDetails";
 
 const Route = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const Route = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog></Blog>,
+        element: <Blogs></Blogs>,
       },
       {
         path: "/login",
@@ -41,6 +42,15 @@ const Route = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("/services.json"),
+      },
+      {
+        path: "/blog/:id",
+        element: (
+          <PrivateRoute>
+            <BlogDetails></BlogDetails>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/blog.json"),
       },
     ],
   },

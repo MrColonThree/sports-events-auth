@@ -1,12 +1,14 @@
-
 import { Link } from "react-router-dom";
+import "aos/dist/aos.css";
 
 
-const Service = ({service}) => {
- 
+const Service = ({ service }) => {
   const { id, title, short_details, image } = service;
+  // data-aos="flip-left"
+  //   data-aos-easing="ease-out-cubic"
+  //   data-aos-duration="1500"
   return (
-    <div className="relative">
+    <div className="relative " >
       <img className="h-80 w-full" src={image} alt="" />
       <div className="absolute inset-0  hover:bg-blue-400/90 p-5 text-white hover:text-black">
         <div className="">

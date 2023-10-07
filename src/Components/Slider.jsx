@@ -8,6 +8,7 @@ export function CarouselWithContent() {
       .then((res) => res.json())
       .then((data) => setSlides(data));
   }, []);
+
   return (
     <Carousel>
       {slides.map((slide, index) => (
@@ -22,7 +23,6 @@ export function CarouselWithContent() {
               <h1 className="mb-4 text-3xl text-white font-semibold md:text-4xl lg:text-5xl">
                 {slide.title}
               </h1>
-             
             </div>
           </div>
         </div>

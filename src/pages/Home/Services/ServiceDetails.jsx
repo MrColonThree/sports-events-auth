@@ -3,10 +3,11 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 const ServiceDetails = () => {
   const { id } = useParams();
+  console.log(id);
   const services = useLoaderData();
   console.log(services);
   const service = services.find((service) => service.id === parseInt(id));
-  const { title, short_details, price, details, ratings, image } = service;
+  const { title, price, details, ratings, image } = service;
 
   return (
     <div className="max-w-screen-xl mx-auto flex justify-center items-center px-2">
@@ -25,7 +26,10 @@ const ServiceDetails = () => {
                 {ratings}
               </p>
             </div>
-            <p className="text-xl">Registration fee: <span className="text-2xl font-bold">${price}</span></p>
+            <p className="text-xl">
+              Registration fee:{" "}
+              <span className="text-2xl font-bold">${price}</span>
+            </p>
           </div>
           <p>{details}</p>
         </div>

@@ -24,6 +24,10 @@ function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
+  // const navigate = useNavigate();
+  // if (logOut) {
+  //   navigate("/");
+  // }
   const profileMenuItems = (
     <ul className="space-y-2 font-semibold p-2">
       <li>
