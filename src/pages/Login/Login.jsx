@@ -33,6 +33,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         navigate(location?.state ? location.state : "/");
+        return Swal.fire("Great!", "User logged in successfully!", "success");
       })
       .catch(() => {
         return setError("Something went wrong!");
@@ -44,6 +45,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         navigate(location?.state ? location.state : "/");
+        return Swal.fire("Great!", "User logged in successfully!", "success");
       })
       .catch(() => {
         return setError("Something went wrong!");

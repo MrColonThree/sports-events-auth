@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="flex justify-between border-t gap-5 border-blue-gray-50 bg-gray-300 py-6 text-center px-4">
+    <footer className="flex justify-between border-t gap-5 border-blue-gray-50 bg-gray-300 py-6 text-center px-4 bottom-0">
       <div className="flex gap-1 flex-wrap">
         &copy; 2023 Sportacular360 |
         <h2>
@@ -26,7 +26,7 @@ export function Footer() {
             </Link>
           </li>
           <li>
-            <Link className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500">
+            <Link to="/contact" className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500">
               Contact
             </Link>
           </li>

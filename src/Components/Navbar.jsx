@@ -19,15 +19,12 @@ import { useContext, useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
-  // const navigate = useNavigate();
-  // if (logOut) {
-  //   navigate("/");
-  // }
+
   const profileMenuItems = (
     <ul className="space-y-2 font-semibold p-2">
       <li>
@@ -102,6 +99,9 @@ export function CustomizeNavbar() {
       "resize",
       () => window.innerWidth >= 960 && setIsNavOpen(false)
     );
+  }, []);
+  useEffect(() => {
+    Aos.init();
   }, []);
   const navLinks = (
     <ul className="mb-4 text-lg mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-10 font-semibold list-none">
@@ -192,11 +192,11 @@ export function CustomizeNavbar() {
     </ul>
   );
   return (
-    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4" data-aos="fade-down">
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900 max-w-screen-xl">
         <NavLink
           to="/"
-          className="mr-4 ml-2 my-2  text-2xl font-bold cursor-pointer text-black"
+          className="mr-4 ml-2 my-2  text-2xl font-bold cursor-pointer text-black roboto"
         >
           SPORTACULAR360
         </NavLink>

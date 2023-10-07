@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 const Newsletter = () => {
   const [cards, setCards] = useState([]);
   useEffect(() => {
@@ -8,19 +9,33 @@ const Newsletter = () => {
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="my-20 px-5 max-w-screen-xl mx-auto">
-      <div className="relative h-[550px]">
+      <div
+        className="relative h-[550px]"
+        data-aos="zoom-in"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1500"
+      >
         <img
           src="https://images.unsplash.com/photo-1544097797-bf8fc095364c"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 grid place-items-center bg-black/75">
           <div className="text-white text-center p-5 max-w-4xl">
-            <h1 className="text-2xl font-semibold text-blue-500">SPORTACULAR360</h1>
+            <h1 className="text-2xl font-semibold text-blue-500 roboto">
+              SPORTACULAR360
+            </h1>
             <h1 className="text-xl font-semibold my-5">DON'T MISS OUT</h1>
-            <h1 className="text-5xl font-bold mb-2">SUBSCRIBE TO OUR NEWSLETTER TODAY</h1>
-            <h1 className="text-lg">Sign-up today for the latest news and deals</h1>
+            <h1 className="text-5xl font-bold mb-2">
+              SUBSCRIBE TO OUR NEWSLETTER TODAY
+            </h1>
+            <h1 className="text-lg">
+              Sign-up today for the latest news and deals
+            </h1>
           </div>
         </div>
       </div>

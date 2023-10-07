@@ -1,6 +1,7 @@
-
 import { useEffect, useState } from "react";
 import Service from "./Service";
+import Aos from "aos";
+import "aos/dist/aos.css";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
@@ -9,10 +10,15 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   console.log(services);
- 
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div className="max-w-screen-xl mx-auto p-2 my-20">
-      <div className="max-w-lg mx-auto text-center space-y-5 mb-10">
+      <div
+        className="max-w-xl mx-auto text-center space-y-5 mb-10"
+        data-aos="fade-up"
+      >
         <h1 className="text-3xl font-semibold">
           VIP SPORT EVENTS AND HOSPITALITY
         </h1>
@@ -24,8 +30,8 @@ const Services = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        {services.map((service) => (
-          <Service key={service.id} service={service}></Service>
+        {services.map((service, index) => (
+          <Service key={index} service={service}></Service>
         ))}
       </div>
     </div>

@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 import "aos/dist/aos.css";
+import Aos from "aos";
+import { useEffect } from "react";
 
-
-const Service = ({ service }) => {
+const Service = ({ service, index }) => {
   const { id, title, short_details, image } = service;
-  // data-aos="flip-left"
-  //   data-aos-easing="ease-out-cubic"
-  //   data-aos-duration="1500"
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="relative " >
+    <div
+      className="relative"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="1500"
+      data-aos="zoom-in"
+    >
       <img className="h-80 w-full" src={image} alt="" />
       <div className="absolute inset-0  hover:bg-blue-400/90 p-5 text-white hover:text-black">
         <div className="">

@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <div>
       <CustomizeNavbar></CustomizeNavbar>
-     <div className="min-h-[82vh]">
+     <div className="min-h-[83vh]">
      <Outlet></Outlet>
      </div>
       <Footer></Footer>
