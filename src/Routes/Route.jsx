@@ -9,6 +9,8 @@ import ServiceDetails from "../pages/Home/Services/ServiceDetails";
 import Blogs from "../pages/Blogs/Blogs";
 import BlogDetails from "../pages/Blogs/BlogDetails";
 import ErrorPage from "../pages/ErrorPage";
+import MemberShip from "../pages/MemberShip";
+import Events from "../pages/Events/Events";
 
 const Route = createBrowserRouter([
   {
@@ -21,12 +23,24 @@ const Route = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/events",
+        element: (
+          <PrivateRoute>
+            <Events></Events>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/blog",
         element: (
           <PrivateRoute>
             <Blogs></Blogs>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/membership",
+        element: <MemberShip></MemberShip>,
       },
       {
         path: "/login",
@@ -47,7 +61,6 @@ const Route = createBrowserRouter([
             <ServiceDetails></ServiceDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("/services.json"),
       },
       {
         path: "/blog/:id",
@@ -56,7 +69,6 @@ const Route = createBrowserRouter([
             <BlogDetails></BlogDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("/blog.json"),
       },
     ],
   },

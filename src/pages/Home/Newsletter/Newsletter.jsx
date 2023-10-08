@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import Aos from "aos";
-import "aos/dist/aos.css";
+
 const Newsletter = () => {
   const [cards, setCards] = useState([]);
   useEffect(() => {
     fetch("/newsletter.json")
       .then((res) => res.json())
       .then((data) => setCards(data));
-  }, []);
-  useEffect(() => {
-    Aos.init();
   }, []);
   return (
     <div className="my-20 px-5 max-w-screen-xl mx-auto">
@@ -26,11 +22,11 @@ const Newsletter = () => {
         />
         <div className="absolute inset-0 grid place-items-center bg-black/75">
           <div className="text-white text-center p-5 max-w-4xl">
-            <h1 className="text-2xl font-semibold text-blue-500 roboto">
+            <h1 className="text-2xl font-semibold text-blue-500 luna">
               SPORTACULAR360
             </h1>
             <h1 className="text-xl font-semibold my-5">DON'T MISS OUT</h1>
-            <h1 className="text-5xl font-bold mb-2">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
               SUBSCRIBE TO OUR NEWSLETTER TODAY
             </h1>
             <h1 className="text-lg">

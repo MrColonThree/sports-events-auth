@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 const Sponsors = () => {
   return (
     <div className="my-20 max-w-screen-xl mx-auto px-5">
-      <h1 className="text-3xl font-semibold text-center mb-10">Partners & Sponsors</h1>
+      <h1 className="text-3xl md:text-4xl font-semibold text-center mb-10 graduate uppercase">Partners & Sponsors</h1>
       <Marquee pauseOnHover={true} speed={80}>
         <img
           className="h-28 w-52 mr-20"

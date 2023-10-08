@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-
 export function Footer() {
   return (
     <footer className="flex justify-between border-t gap-5 border-blue-gray-50 bg-gray-300 py-6 text-center px-4 bottom-0">
-      <div className="flex gap-1 flex-wrap">
-        &copy; 2023 Sportacular360 |
+      <div className="flex justify-center items-center gap-1 flex-wrap">
+        &copy; 2023{" "}
+        <span className="luna font-semibold text-lg uppercase">
+          Sportacular360
+        </span>{" "}
+        |
         <h2>
           Website by{" "}
           <Link to="https://github.com/MrColonThree" className="text-blue-500">
@@ -14,7 +17,7 @@ export function Footer() {
       </div>
 
       <div>
-        <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
+        <ul className="flex flex-wrap justify-center items-center gap-y-2 gap-x-8 ">
           <li>
             <Link className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500">
               Terms & Conditions
@@ -26,7 +29,10 @@ export function Footer() {
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500">
+            <Link
+              to="/contact"
+              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+            >
               Contact
             </Link>
           </li>

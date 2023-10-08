@@ -1,0 +1,31 @@
+[
+  {
+    "category_name": "Standard Package",
+    "monthly_fee": 19.99,
+    "facilities": [
+      "Access to all regular season games",
+      "Exclusive newsletter and updates",
+      "10% discount on fan gear"
+    ]
+  },
+  {
+    "category_name": "Premium Package",
+    "monthly_fee": 29.99,
+    "facilities": [
+      "VIP access to select games",
+      "Behind-the-scenes content",
+      "20% discount on merchandise",
+      "Private forum access"
+    ]
+  },
+  {
+    "category_name": "Platinum Package",
+    "monthly_fee": 49.99,
+    "facilities": [
+      "VIP access to all games",
+      "Exclusive meet-and-greet with athletes",
+      "25% discount on fan gear",
+      "Live streaming of games"
+    ]
+  }
+]

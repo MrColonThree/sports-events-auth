@@ -18,10 +18,10 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: A: `{}`
+#### Answer: B: `ReferenceError: greetign is not defined`
      
 
-<i>Here we know that we can reassign value in let variable.At first as we didn't set it any value, so that it's value was undefined.After that we reassign it's value as an empty object. So, the output will be the empty object {}</i>
+<i>Here we know that we can reassign value in let variable.At first line a variable declared by let without set any value.After that we assign an empty object to greetign which was not declared.So that after console it we don't get it's value.That's why the output is `ReferenceError: greetign is not defined`</i>
 
 </p>
 </details>

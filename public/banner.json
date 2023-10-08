@@ -1,14 +1,17 @@
 [
   {
-    "title": "2023 Upcoming Events",
-    "image": "https://images.unsplash.com/flagged/photo-1568118782915-fa213a00a49b"
+    "title": "Experience Victory, Your Ultimate Sports Hub!",
+    "image": "https://images.unsplash.com/flagged/photo-1568118782915-fa213a00a49b",
+    "description": "Welcome to our sports event website, where passion meets action! Discover upcoming fixtures, get tickets, and immerse yourself in the excitement of your favorite games. Join us for unforgettable moments on and off the field!"
   },
   {
-    "title": "RunRush Marathon",
-    "image": "https://cdn.pixabay.com/photo/2013/11/14/20/52/sports-210661_1280.jpg"
+    "title": "Get Your Tickets Now – Limited-Time Offers!",
+    "image": "https://cdn.pixabay.com/photo/2013/11/14/20/52/sports-210661_1280.jpg",
+    "description": "Unlock exclusive savings on event tickets! Explore our limited-time promotions and discounts to secure your seat at the hottest sports events while saving big. Don't miss out on these unbeatable offers!"
   },
   {
     "title": "Sportacular Social Membership",
-    "image": "https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_1280.jpg"
+    "image": "https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_1280.jpg",
+    "description": "Elevate your sports fan experience with our Sportacular Social Membership! Gain access to exclusive perks, behind-the-scenes content, and a vibrant community of fellow enthusiasts. Join today and be a part of the ultimate sports fandom network."
   }
 ]

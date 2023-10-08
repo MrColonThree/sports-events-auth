@@ -1,14 +1,16 @@
+import { useContext, useEffect } from "react";
 import { AiFillStar } from "react-icons/ai";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProviders";
 
 const ServiceDetails = () => {
   const { id } = useParams();
-  console.log(id);
-  const services = useLoaderData();
-  console.log(services);
+  const { services } = useContext(AuthContext);
   const service = services.find((service) => service.id === parseInt(id));
   const { title, price, details, ratings, image } = service;
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="max-w-screen-xl mx-auto flex justify-center items-center px-2">
       <div className="flex flex-col">
@@ -28,10 +30,15 @@ const ServiceDetails = () => {
             </div>
             <p className="text-xl">
               Registration fee:{" "}
-              <span className="text-2xl font-bold">${price}</span>
+              <span className="text-2xl font-bold text-pink-500">${price}</span>
             </p>
           </div>
           <p>{details}</p>
+          <div>
+            <button className="text-xl font-semibold bg-pink-500 text-white px-4 py-2 rounded-lg mb-5">
+              Get Ticket
+            </button>
+          </div>
         </div>
       </div>
     </div>

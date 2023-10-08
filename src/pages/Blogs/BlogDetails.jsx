@@ -1,9 +1,11 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import BlogSections from "./BlogSections";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const BlogDetails = () => {
   const { id } = useParams();
-  const blogs = useLoaderData();
+  const { blogs } = useContext(AuthContext);
   const blog = blogs.find((blog) => blog.id === id);
   console.log(blog);
   const { title, date, image, intro, sections } = blog;
@@ -22,10 +24,9 @@ const BlogDetails = () => {
       <div className="bg-gray-200 p-4">
         <p className="">{intro}</p>
         {sections.map((section, index) => (
-        <BlogSections key={index} section={section}></BlogSections>
-      ))}
+          <BlogSections key={index} section={section}></BlogSections>
+        ))}
       </div>
-      
     </div>
   );
 };

@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
 const Blog = ({ blog }) => {
-  const {id, title, date, image, intro } = blog;
+  const { id, title, date, image, intro } = blog;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="p-5 my-10">
       <div>
@@ -14,7 +17,12 @@ const Blog = ({ blog }) => {
         </p>
       </div>
       <div className="bg-gray-200 p-4">
-        <p className="">{intro}<Link to={`/blog/${id}`} className="text-blue-500 font-bold">Read more</Link></p>
+        <p className="">
+          {intro}
+          <Link to={`/blog/${id}`} className="text-blue-500 font-bold">
+            read more
+          </Link>
+        </p>
       </div>
     </div>
   );

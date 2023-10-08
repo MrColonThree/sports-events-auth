@@ -22,7 +22,13 @@ const Login = () => {
         console.log(result.user);
         e.target.reset();
         navigate(location?.state ? location.state : "/");
-        return Swal.fire("Great!", "User logged in successfully!", "success");
+        return Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User logged in successfully!",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       })
       .catch(() => {
         return setError("Invalid email or password!");
@@ -30,10 +36,15 @@ const Login = () => {
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         navigate(location?.state ? location.state : "/");
-        return Swal.fire("Great!", "User logged in successfully!", "success");
+        return Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User logged in successfully!",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       })
       .catch(() => {
         return setError("Something went wrong!");
@@ -42,24 +53,27 @@ const Login = () => {
 
   const handleGithubSignIn = () => {
     githubSignIn()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         navigate(location?.state ? location.state : "/");
-        return Swal.fire("Great!", "User logged in successfully!", "success");
+        return Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User logged in successfully!",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       })
       .catch(() => {
         return setError("Something went wrong!");
       });
   };
   return (
-    <div className="flex justify-center items-center my-20 max-w-5xl mx-auto">
+    <div className="flex justify-center items-center max-w-5xl mx-auto min-h-[85vh] my-10">
       <form
         onSubmit={handleLogIn}
-        className="w-3/4 md:w-4/6 lg:w-1/2 my-10 mx-20   border-2 rounded-2xl py-12 px-10 md:px-20 shadow-xl"
+        className="w-3/4 md:w-4/6 lg:w-1/2 mx-20 border-2 rounded-2xl py-12 px-10 md:px-20 shadow-xl"
       >
-        <h2 className="text-center text-blue-600 text-4xl font-bold mb-5">
-          Login
-        </h2>
+        <img className="w-36 mx-auto" src="logo-full.png" alt="" />
         {error && (
           <div className="text-red-500 text-center  rounded-lg p-3 mb-5">
             {error}

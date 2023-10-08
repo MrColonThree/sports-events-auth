@@ -52,5 +52,59 @@
     "ratings": 4.7,
     "image": "https://cdn.pixabay.com/photo/2015/08/01/13/47/football-870283_1280.jpg",
     "details": "The Rugby Championship Finals is the pinnacle of rugby competition, where the most formidable teams in the sport come together in a battle for supremacy. It's a clash of titans that promises to showcase the grit, skill, and physicality that make rugby one of the most exciting sports in the world. The event is hosted in a state-of-the-art stadium designed to amplify the intensity of the game. As you step into the venue, you'll be greeted by the thunderous cheers of fans from all over, united in their passion for rugby. On the field, expect bone-crushing tackles that echo through the stadium, lightning-fast sprints that defy belief, and thrilling tries that will have you on your feet. Every scrum, every lineout, and every maul is a battle, and the players leave it all on the field. Despite the adrenaline-pumping action, tickets for the Rugby Championship Finals are available at just $54.99, making it an affordable outing for rugby enthusiasts and families alike. The 4.7/5 rating from previous attendees attests to the event's ability to deliver an unforgettable rugby spectacle. Whether you're a die-hard rugby fan or new to the sport, this championship offers a unique and thrilling experience that you won't want to miss. Secure your tickets now, and be part of the passion, power, and excitement of the Rugby Championship Finals!"
+  },
+  {
+    "id": 7,
+    "title": "Cricket World Cup",
+    "price": 49.99,
+    "short_details": "Experience the thrill of international cricket competitions.",
+    "ratings": 4.8,
+    "image": "https://images.unsplash.com/photo-1607734834519-d8576ae60ea6",
+    "details": "The Cricket World Cup is the ultimate cricketing showdown, featuring the world's best teams battling it out on the pitch. Join us for an unforgettable journey through the excitement, drama, and skill of international cricket. Whether you're a die-hard cricket fan or new to the sport, this event promises an incredible experience for all. Don't miss out on the action, book your tickets now!"
+  },
+  {
+    "id": 8,
+    "title": "Basketball Championship",
+    "price": 59.99,
+    "short_details": "Witness high-flying dunks and intense basketball clashes.",
+    "ratings": 4.6,
+    "image": "https://images.unsplash.com/photo-1504450758481-7338eba7524a",
+    "details": "Get ready for slam dunks, three-pointers, and heart-stopping buzzer-beaters at the Basketball Championship. This event showcases the world's elite basketball talent in a high-energy, action-packed tournament. From fast breaks to precision shooting, it's a basketball extravaganza you won't want to miss. Secure your seats now!"
+  },
+  {
+    "id": 9,
+    "title": "Horse Race",
+    "price": 39.99,
+    "short_details": "Experience the elegance and excitement of horse racing.",
+    "ratings": 4.5,
+    "image": "https://images.unsplash.com/photo-1526094798790-1df6f28275cc",
+    "details": "Step into a world of elegance and excitement at the Horse Race event. Watch majestic thoroughbreds sprint to the finish line in a thrilling race for glory. Whether you're a seasoned racegoer or a newcomer, this event promises an unforgettable day of sportsmanship and style. Book your tickets and be part of the racing tradition!"
+  },
+  {
+    "id": 10,
+    "title": "Olympic Games",
+    "price": 79.99,
+    "short_details": "Experience the world's most prestigious multi-sport event.",
+    "ratings": 4.9,
+    "image": "https://cdn.pixabay.com/photo/2016/05/10/04/28/london-1383064_1280.jpg",
+    "details": "The Olympic Games is the pinnacle of athletic achievement, featuring athletes from around the globe competing in a wide range of sports. Join us for a celebration of human excellence, sportsmanship, and cultural diversity. Witness record-breaking performances and unforgettable moments. Whether you're a sports enthusiast or simply love the spirit of competition, the Olympic Games offers an unparalleled experience. Secure your tickets to witness history in the making!"
+  },
+  {
+    "id": 11,
+    "title": "Wimbledon Tennis Championships",
+    "price": 69.99,
+    "short_details": "Watch tennis history unfold at the prestigious Wimbledon tournament.",
+    "ratings": 4.8,
+    "image": "https://images.unsplash.com/photo-1531315396756-905d68d21b56",
+    "details": "The Wimbledon Tennis Championships is the oldest and most prestigious tennis tournament in the world. Join us for two weeks of intense matches on the grass courts, where the world's top tennis players battle for glory. From epic rallies to elegant serves, Wimbledon is a tennis lover's dream. Whether you're a seasoned tennis fan or a newcomer, this event promises an unforgettable experience. Secure your seats at the iconic Wimbledon venue!"
+  },
+  {
+    "id": 12,
+    "title": "NBA Finals",
+    "price": 89.99,
+    "short_details": "Witness the crowning of the NBA champions in thrilling basketball action.",
+    "ratings": 4.8,
+    "image": "https://images.unsplash.com/photo-1626003573503-2e088d82c647",
+    "details": "The NBA Finals is the culmination of the National Basketball Association season, where the top teams compete for the championship title. Experience the intensity of basketball at its highest level, with slam dunks, three-pointers, and clutch plays. Whether you're a basketball enthusiast or a casual viewer, this event guarantees excitement and drama. Secure your tickets to witness the crowning of the NBA champions!"
   }
 ]

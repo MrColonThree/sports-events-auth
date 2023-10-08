@@ -1,25 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import Service from "./Service";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import { AuthContext } from "../../../providers/AuthProviders";
+import { Link } from "react-router-dom";
 const Services = () => {
-  const [services, setServices] = useState([]);
-  useEffect(() => {
-    fetch("services.json")
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  }, []);
-  console.log(services);
-  useEffect(() => {
-    Aos.init();
-  }, []);
+  const { services } = useContext(AuthContext);
+ 
   return (
     <div className="max-w-screen-xl mx-auto p-2 my-20">
       <div
         className="max-w-xl mx-auto text-center space-y-5 mb-10"
         data-aos="fade-up"
       >
-        <h1 className="text-3xl font-semibold">
+        <h1 className="text-3xl md:text-4xl font-semibold graduate">
           VIP SPORT EVENTS AND HOSPITALITY
         </h1>
         <p>
@@ -30,9 +22,16 @@ const Services = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        {services.map((service, index) => (
+        {services.slice(0, 6).map((service, index) => (
           <Service key={index} service={service}></Service>
         ))}
+      </div>
+      <div className="text-center mt-10">
+        <Link to="/events">
+          <button className="px-3 py-2 text-white text-lg bg-blue-500 font-semibold rounded-lg">
+            See All Events
+          </button>
+        </Link>
       </div>
     </div>
   );

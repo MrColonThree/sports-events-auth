@@ -14,6 +14,7 @@ const Register = () => {
   const handleSignIn = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
+    const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirmPassword = e.target.password1.value;
@@ -38,35 +39,38 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        if (name) {
-          updateProfile(user, { displayName: name }).then(() => {
-            console.log("User created successfully with display name:", name);
-            // update the user name after creating user
-            setUser((currentUser) => {
-              currentUser.displayName = name;
-              e.target.reset();
-              navigate("/");
-              return Swal.fire(
-                "Great!",
-                "User created successfully!",
-                "success"
-              );
+
+        updateProfile(user, { displayName: name, photoURL: photo }).then(() => {
+          // update the user name and photo after creating user
+          setUser((currentUser) => {
+            console.log(currentUser);
+            currentUser.displayName = name;
+            currentUser.photoURL = photo;
+            e.target.reset();
+            navigate("/");
+            return Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "User created successfully!",
+              showConfirmButton: false,
+              timer: 1000,
             });
           });
-        } else {
-          console.log("User created successfully without display name");
-          e.target.reset();
-          navigate("/");
-          return Swal.fire("Great!", "User created successfully!", "success");
-        }
+        });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(() => {
         navigate("/");
-        return Swal.fire("Great!", "User logged in successfully!", "success");
+        return Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User logged in successfully!",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       })
       .catch((error) => console.log(error));
   };
@@ -75,20 +79,24 @@ const Register = () => {
     githubSignIn()
       .then(() => {
         navigate("/");
-        return Swal.fire("Great!", "User logged in successfully!", "success");
+        return Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User logged in successfully!",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       })
       .catch((error) => console.log(error));
   };
   return (
-    <div className="flex justify-center items-center my-10 max-w-5xl mx-auto">
+    <div className="flex justify-center items-center my-10 max-w-5xl mx-auto min-h-[85vh]">
       <form
         onSubmit={handleSignIn}
-        className="w-3/4 md:w-4/6 lg:w-1/2 my-10 mx-20   border-2 rounded-2xl py-12 px-10 md:px-20 shadow-xl"
+        className="w-3/4 md:w-4/6 lg:w-1/2 mx-20   border-2 rounded-2xl py-12 px-10 md:px-20 shadow-xl"
       >
-        <h2 className="text-center text-blue-600 text-4xl font-bold mb-5">
-          Register
-        </h2>
-        <div className="mb-5">
+        <img className="w-36 mx-auto" src="logo-full.png" alt="" />
+        <div className="mb-3">
           <label className="block mb-2 font-medium ">Your name</label>
           <input
             type="text"
@@ -98,7 +106,16 @@ const Register = () => {
             required
           />
         </div>
-        <div className="mb-5">
+        <div className="mb-3">
+          <label className="block mb-2 font-medium ">Photo</label>
+          <input
+            type="text"
+            name="photo"
+            className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="your photo url"
+          />
+        </div>
+        <div className="mb-3">
           <label className="block mb-2 font-medium ">Your email</label>
           <input
             type="email"
@@ -108,7 +125,7 @@ const Register = () => {
             required
           />
         </div>
-        <div className="mb-5">
+        <div className="mb-3">
           <label className="block mb-2 text-sm font-medium ">
             Your password
           </label>
@@ -139,7 +156,7 @@ const Register = () => {
             </p>
           </div>
         </div>
-        <div className="mb-6">
+        <div className="mb-5">
           <label className="block mb-2 text-sm font-medium ">
             Confirm password
           </label>
@@ -164,7 +181,7 @@ const Register = () => {
           </div>
         </div>
         {error && <div className="text-red-500 rounded-lg  mb-5">{error}</div>}
-        <div className="flex items-start mb-5">
+        <div className="flex items-start mb-3">
           <div className="flex items-center h-5">
             <input
               type="checkbox"
@@ -177,7 +194,7 @@ const Register = () => {
             Accept Our Terms & Conditions
           </label>
         </div>
-        <div className="mb-5">
+        <div className="mb-3">
           <h2>
             Already have an account?
             <NavLink className="text-blue-600 font-semibold" to="/login">

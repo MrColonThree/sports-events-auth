@@ -1,11 +1,5 @@
-import { useEffect } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 const Card = ({ card }) => {
   const { title, icon, description } = card;
-  useEffect(() => {
-    Aos.init();
-  }, []);
   return (
     <div className="flex flex-col p-5 text-center" data-aos="fade-up">
       <img

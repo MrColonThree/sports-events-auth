@@ -1,16 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Graduate&family=Lunasima:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.arvo{
-  font-family: 'Arvo', serif;
+.luna {
+  font-family: "Lunasima", sans-serif;
 }
-
-.poppins {
-  font-family: 'Poppins', sans-serif;
+.exo {
+  font-family: "Exo 2", sans-serif;
 }
-
-.roboto {
-  font-family: 'Roboto', sans-serif;
+.graduate {
+  font-family: "Graduate", serif;
 }
