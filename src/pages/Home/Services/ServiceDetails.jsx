@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     <div className="max-w-screen-xl mx-auto flex justify-center items-center px-2">
       <div className="flex flex-col">
         <img
-          className="w-full h-[400px] md:h-[550px] lg:h-[700px]"
+          className="w-full h-[300px] md:h-[550px] lg:h-[700px]"
           src={image}
           alt=""
         />
