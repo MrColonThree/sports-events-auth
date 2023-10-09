@@ -16,9 +16,9 @@ const FeaturedBlogs = () => {
           <CardFeatured key={index} blog={blog}></CardFeatured>
         ))}
       </div>
-      <div className="text-center mb-14">
+      <div className="text-center my-10">
         <Link to="/blog">
-          <button className="px-3 py-2 text-white bg-blue-500 font-semibold rounded-lg">
+          <button className="px-3 py-2 text-white text-lg bg-blue-500 hover:bg-blue-700 font-semibold rounded-lg">
             See more
           </button>
         </Link>

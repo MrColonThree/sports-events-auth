@@ -28,7 +28,7 @@ const Services = () => {
       </div>
       <div className="text-center mt-10">
         <Link to="/events">
-          <button className="px-3 py-2 text-white text-lg bg-blue-500 font-semibold rounded-lg">
+          <button className="px-3 py-2 text-white text-lg bg-blue-500 hover:bg-blue-700 font-semibold rounded-lg">
             See All Events
           </button>
         </Link>

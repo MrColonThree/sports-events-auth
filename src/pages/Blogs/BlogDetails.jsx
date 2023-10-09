@@ -7,9 +7,7 @@ const BlogDetails = () => {
   const { id } = useParams();
   const { blogs } = useContext(AuthContext);
   const blog = blogs.find((blog) => blog.id === id);
-  console.log(blog);
   const { title, date, image, intro, sections } = blog;
-  console.log(sections);
   return (
     <div className="p-5 max-w-screen-xl mx-auto">
       <div>

@@ -16,7 +16,7 @@ import {
   PowerIcon,
 } from "@heroicons/react/24/outline";
 import { useContext, useEffect, useState } from "react";
-import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineBars, AiOutlineMail } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 import Swal from "sweetalert2";
@@ -37,6 +37,11 @@ function ProfileMenu() {
     <ul className="space-y-2 font-semibold p-2">
       <li className="md:hidden text-blue-500 text-center">
         <NavLink className="flex gap-1">{user.displayName || ""}</NavLink>
+      </li>
+      <li>
+        <NavLink className="flex items-center gap-1">
+          <AiOutlineMail className="w-5 h-4"></AiOutlineMail> {user.email}
+        </NavLink>
       </li>
       <li>
         <NavLink className="flex gap-1">
@@ -100,7 +105,7 @@ function ProfileMenu() {
   );
 }
 
-export function CustomizeNavbar() {
+const CustomizeNavbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { user } = useContext(AuthContext);
   useEffect(() => {
@@ -118,8 +123,8 @@ export function CustomizeNavbar() {
             isPending
               ? "pending"
               : isActive
-              ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
-              : " block py-2 pl-3 pr-4 md:bg-transparent hover:text-gray-500 text-black md:p-0"
+              ? " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+              : " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent hover:text-gray-500 text-black md:p-0"
           }
           aria-current="page"
           variant="small"
@@ -134,8 +139,8 @@ export function CustomizeNavbar() {
             isPending
               ? "pending"
               : isActive
-              ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
-              : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
+              ? " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+              : " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
           }
           aria-current="page"
           variant="small"
@@ -150,8 +155,8 @@ export function CustomizeNavbar() {
             isPending
               ? "pending"
               : isActive
-              ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
-              : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
+              ? " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+              : " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
           }
           aria-current="page"
           variant="small"
@@ -166,8 +171,8 @@ export function CustomizeNavbar() {
             isPending
               ? "pending"
               : isActive
-              ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
-              : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
+              ? " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+              : " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
           }
           aria-current="page"
           variant="small"
@@ -182,8 +187,8 @@ export function CustomizeNavbar() {
             isPending
               ? "pending"
               : isActive
-              ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
-              : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
+              ? " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+              : " block py-1 lg:py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
           }
           aria-current="page"
           variant="small"
@@ -200,8 +205,8 @@ export function CustomizeNavbar() {
                 isPending
                   ? "pending"
                   : isActive
-                  ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
-                  : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
+                  ? " block py-1 md:py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+                  : " block py-1 md:py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
               }
               aria-current="page"
               variant="small"
@@ -216,8 +221,8 @@ export function CustomizeNavbar() {
                 isPending
                   ? "pending"
                   : isActive
-                  ? " block py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
-                  : " block py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
+                  ? " block py-1 md:py-2 pl-3 pr-4 md:bg-transparent  md:p-0 text-gray-500"
+                  : " block py-1 md:py-2 pl-3 pr-4 md:bg-transparent text-black hover:text-gray-500 md:p-0"
               }
               aria-current="page"
               variant="small"
@@ -232,16 +237,7 @@ export function CustomizeNavbar() {
   return (
     <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 ">
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900 max-w-screen-xl">
-        <NavLink
-          to="/"
-          className="mr-4 ml-2 my-2  text-2xl font-bold cursor-pointer text-black luna flex gap-2 items-center"
-        >
-          <img className="h-8" src="logo.png" alt="" />
-          SPORTACULAR360
-        </NavLink>
-        <div className="flex gap-5 items-center">
-          <div className="hidden lg:block">{navLinks}</div>
-          {user && <ProfileMenu />}
+        <div>
           <IconButton
             variant="text"
             className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -255,10 +251,23 @@ export function CustomizeNavbar() {
             )}
           </IconButton>
         </div>
+        <NavLink
+          to="/"
+          className="mr-4 ml-2 my-2  text-2xl font-bold cursor-pointer text-black luna flex gap-2 items-center"
+        >
+          <img className="h-8" src="/logo.png" alt="" />
+          SPORTACULAR360
+        </NavLink>
+        <div className="flex gap-5 items-center">
+          <div className="hidden lg:block">{navLinks}</div>
+          {user && <ProfileMenu />}
+        </div>
       </div>
       <Collapse open={isNavOpen} className="overflow-hidden">
         {navLinks}
       </Collapse>
     </Navbar>
   );
-}
+};
+
+export default CustomizeNavbar;

@@ -21,21 +21,21 @@ const ServiceDetails = () => {
         />
         <div className="mt-10 space-y-4">
           <div className="flex flex-col md:flex-row gap-5 justify-between">
-            <div className="flex gap-5">
-              <h1 className="text-4xl">{title}</h1>
+            <div className="flex gap-5 items-center">
+              <h1 className="text-4xl font-semibold">{title}</h1>
               <p className="text-xl flex items-center">
                 <AiFillStar className="text-amber-500"></AiFillStar>
                 {ratings}
               </p>
             </div>
             <p className="text-xl">
-              Registration fee:{" "}
-              <span className="text-2xl font-bold text-pink-500">${price}</span>
+              Entry Fee:{" "}
+              <span className="text-2xl font-bold text-blue-500">${price}</span>
             </p>
           </div>
           <p>{details}</p>
           <div>
-            <button className="text-xl font-semibold bg-pink-500 text-white px-4 py-2 rounded-lg mb-5">
+            <button className="text-xl font-semibold bg-blue-500 text-white px-4 py-2 rounded-lg mb-5">
               Get Ticket
             </button>
           </div>

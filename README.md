@@ -1,5 +1,6 @@
 #Features
-Sportacular360 is a website which hosts sport events.Here 7 pages in the navbar.Where the Blog and Events pages are Private Route. User can't get access without login.After login, 2 pages (Register & Login) will be hidden from navbar and the user's photo and name will be shown top-right corner of the navbar.Here you can see a dropdown bar after clicking the down arrow (beside profile photo) where all pages are inactive except Sign out .By clicking Sign out, user can successfully logged out from his/her account and redirected to home page.
+
+<p>Sportacular360 is a website which hosts sport events.Here 7 pages in the navbar.Where the Blog and Events pages are Private Route. User can't get access without login.After login, 2 pages (Register & Login) will be hidden from navbar and the user's photo and name will be shown top-right corner of the navbar.Here you can see a dropdown bar after clicking the down arrow (beside profile photo) where all pages are inactive except Sign out .By clicking Sign out, user can successfully logged out from his/her account and redirected to home page.</p>
 
 1. Home - It has 5 sections
 
@@ -20,3 +21,6 @@ Sportacular360 is a website which hosts sport events.Here 7 pages in the navbar.
 6. Register - In this page, there is a form to register for this website.Here the form needs name, photo url,email,password.You can register by using your Google account and Github account also.
 
 7. Login - In this page, there is form to login the website. Here the form needs email and password.You can login by using your Google account and Github account also.
+
+*Website Name: SPORTACULAR360
+*Live Link: https://sportacular360.web.app/

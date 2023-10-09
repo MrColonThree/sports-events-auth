@@ -1,23 +1,34 @@
-import { Carousel } from "@material-tailwind/react";
+import { Carousel, IconButton } from "@material-tailwind/react";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
-export function CarouselCustomNavigation() {
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+const CarouselCustomNavigation = () => {
   const { slides } = useContext(AuthContext);
 
   return (
     <Carousel
-      navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-          {new Array(length).fill("").map((_, i) => (
-            <span
-              key={i}
-              className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-              }`}
-              onClick={() => setActiveIndex(i)}
-            />
-          ))}
-        </div>
+      className="rounded-xl"
+      prevArrow={({ handlePrev }) => (
+        <IconButton
+          variant="text"
+          color="white"
+          size="lg"
+          onClick={handlePrev}
+          className="!absolute top-2/4 left-4 -translate-y-2/4 bg-black/50 "
+        >
+          <SlArrowLeft className="text-2xl"></SlArrowLeft>
+        </IconButton>
+      )}
+      nextArrow={({ handleNext }) => (
+        <IconButton
+          variant="text"
+          color="white"
+          size="lg"
+          onClick={handleNext}
+          className="!absolute top-2/4 !right-4 -translate-y-2/4 bg-black/50 "
+        >
+          <SlArrowRight className="text-2xl"></SlArrowRight>
+        </IconButton>
       )}
     >
       {slides.map((slide, index) => (
@@ -45,4 +56,6 @@ export function CarouselCustomNavigation() {
       ))}
     </Carousel>
   );
-}
+};
+
+export default CarouselCustomNavigation;

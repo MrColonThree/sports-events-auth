@@ -58,7 +58,21 @@ const Register = () => {
           });
         });
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        let errorMessage = "An error occurred while creating the user account.";
+
+        if (error.code === "auth/email-already-in-use") {
+          errorMessage =
+            "The email address is already in use. Please use a different email.";
+        } else if (error.code === "auth/invalid-email") {
+          errorMessage = "Invalid email address.";
+        } else if (error.code === "auth/weak-password") {
+          errorMessage =
+            "The password is too weak. Please choose a stronger password.";
+        }
+
+        return setError(errorMessage);
+      });
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -72,7 +86,10 @@ const Register = () => {
           timer: 1000,
         });
       })
-      .catch((error) => console.log(error));
+      .catch(() => {
+        let errorMessage = "An error occurred while creating the user account.";
+        return setError(errorMessage);
+      });
   };
 
   const handleGithubSignIn = () => {
@@ -87,7 +104,10 @@ const Register = () => {
           timer: 1000,
         });
       })
-      .catch((error) => console.log(error));
+      .catch(() => {
+        let errorMessage = "An error occurred while creating the user account.";
+        return setError(errorMessage);
+      });
   };
   return (
     <div className="flex justify-center items-center my-10 max-w-5xl mx-auto min-h-[85vh]">
@@ -196,7 +216,7 @@ const Register = () => {
         </div>
         <div className="mb-3">
           <h2>
-            Already have an account?
+            Already have an account?{" "}
             <NavLink className="text-blue-600 font-semibold" to="/login">
               Login
             </NavLink>

@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+
   const authInfo = useContext(AuthContext);
   const { signInUser, googleSignIn, githubSignIn } = authInfo;
   const [showPassword, setShowPassword] = useState(false);
@@ -16,10 +16,8 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log("Login: ", email, password);
     signInUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         e.target.reset();
         navigate(location?.state ? location.state : "/");
         return Swal.fire({
@@ -30,8 +28,17 @@ const Login = () => {
           timer: 1000,
         });
       })
-      .catch(() => {
-        return setError("Invalid email or password!");
+      .catch((error) => {
+        let errorMessage = "An error occurred during login.";
+
+        if (error.code === "auth/invalid-email") {
+          errorMessage = "Invalid email address.";
+        } else if (error.code === "auth/user-not-found") {
+          errorMessage = "User not found. Please check your credentials.";
+        } else if (error.code === "auth/wrong-password") {
+          errorMessage = "Incorrect password.";
+        }
+        setError(errorMessage);
       });
   };
   const handleGoogleSignIn = () => {
@@ -47,7 +54,9 @@ const Login = () => {
         });
       })
       .catch(() => {
-        return setError("Something went wrong!");
+        let errorMessage =
+          "An error occurred while login using this Google account.";
+        return setError(errorMessage);
       });
   };
 
@@ -64,7 +73,9 @@ const Login = () => {
         });
       })
       .catch(() => {
-        return setError("Something went wrong!");
+        let errorMessage =
+          "An error occurred while login using this Github account.";
+        return setError(errorMessage);
       });
   };
   return (

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Service = ({ service }) => {
-  const { id, title, short_details, image,price } = service;
-  
+  const { id, title, short_details, image, price } = service;
+
   return (
     <div
       className="relative"
@@ -14,7 +14,10 @@ const Service = ({ service }) => {
         <div className="">
           <h1 className="text-3xl font-bold mb-2">{title}</h1>
           <p className="text-lg">{short_details}</p>
-          <p className="text-lg ">Registration fee: <span className="font-semibold text-pink-500">${price}</span></p>
+          <p className="text-lg ">
+            Entry Fee:{" "}
+            <span className="font-semibold text-blue-500">${price}</span>
+          </p>
           <Link to={`/details/${id}`}>
             <button className="px-3 py-1 text-black font-semibold bg-white mt-3 rounded-lg">
               Details

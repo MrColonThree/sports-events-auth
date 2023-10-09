@@ -1,11 +1,13 @@
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Service from "../Home/Services/Service";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 const Events = () => {
   const { services } = useContext(AuthContext);
   useEffect(() => {
     window.scrollTo(0, 0);
+    Aos.init();
   }, []);
   return (
     <div className="max-w-screen-xl mx-auto p-2 my-20">

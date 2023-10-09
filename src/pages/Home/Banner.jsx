@@ -1,4 +1,4 @@
-import { CarouselCustomNavigation } from "../../Components/Slider";
+import CarouselCustomNavigation from "../../Components/Slider";
 
 const Banner = () => {
   return (

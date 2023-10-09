@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const CardFeatured = ({ blog }) => {
@@ -7,12 +6,12 @@ const CardFeatured = ({ blog }) => {
   return (
     <div
       className="flex flex-col p-5 justify-between items-center border shadow-lg"
-      data-aos-easing="ease-out-cubic"
-      data-aos-duration="1000"
       data-aos="fade-up"
     >
       <div className="">
-        <h1 className="mb-3 text-2xl lg:text-3xl font-semibold flex-grow">{title}</h1>
+        <h1 className="mb-3 text-2xl lg:text-3xl font-semibold flex-grow">
+          {title}
+        </h1>
       </div>
       <div className="relative">
         <img className="md:h-[280px] lg:h-[350px]" src={image} alt="" />

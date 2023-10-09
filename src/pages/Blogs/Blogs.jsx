@@ -15,7 +15,7 @@ const Blogs = () => {
       <div className="text-center mb-14">
         <button
           onClick={() => setSeeMore(!seeMore)}
-          className="px-3 py-2 text-white bg-blue-500 font-semibold rounded-lg"
+          className="px-3 py-2 text-white bg-blue-500 hover:bg-blue-700 font-semibold rounded-lg"
         >
           {seeMore ? "See Less" : "See more"}
         </button>
