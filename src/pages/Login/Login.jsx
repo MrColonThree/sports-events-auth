@@ -126,8 +126,8 @@ const Login = () => {
             </button>
           </div>
         </div>
-        <div className="flex justify-between">
-          <div className="flex mb-5">
+        <div className="flex flex-col md:flex-row justify-between mb-4 gap-5">
+          <div className="flex items-start ">
             <div className="flex items-center h-5">
               <input
                 id="remember"
@@ -140,7 +140,7 @@ const Login = () => {
           </div>
           <NavLink
             to="/resetPassword"
-            className="ml-2 text-sm font-medium text-white dark:text-blue-600"
+            className="ml-2 text-sm font-medium dark:text-blue-600"
           >
             Forget password?
           </NavLink>
