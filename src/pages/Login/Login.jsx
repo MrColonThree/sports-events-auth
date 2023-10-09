@@ -169,7 +169,7 @@ const Login = () => {
           <button
             onClick={handleGoogleSignIn}
             type="submit"
-            className="text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 flex gap-2 items-center"
+            className="text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 flex gap-2 items-center justify-center"
           >
             <BsGoogle className="text-lg"></BsGoogle>
             Google
@@ -177,7 +177,7 @@ const Login = () => {
           <button
             onClick={handleGithubSignIn}
             type="submit"
-            className="text-white   focus:ring-4 focus:outline-none f font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 flex gap-2 items-center"
+            className="text-white   focus:ring-4 focus:outline-none f font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 flex gap-2 items-center justify-center"
           >
             <BsGithub className="text-lg"></BsGithub>
             Github
