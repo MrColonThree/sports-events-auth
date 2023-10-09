@@ -40,7 +40,8 @@ function ProfileMenu() {
       </li>
       <li>
         <NavLink className="flex items-center gap-1">
-          <AiOutlineMail className="w-5 h-4"></AiOutlineMail> {user.email}
+          <AiOutlineMail className="w-5 h-4"></AiOutlineMail>{" "}
+          {user.email || "No email"}
         </NavLink>
       </li>
       <li>

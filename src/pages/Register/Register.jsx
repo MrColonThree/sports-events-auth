@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { BsEyeSlashFill, BsEyeFill, BsGoogle, BsGithub } from "react-icons/bs";
 import { AuthContext } from "../../providers/AuthProviders";
@@ -11,6 +11,9 @@ const Register = () => {
   const { createUser, googleSignIn, githubSignIn, setUser } = authInfo;
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleSignIn = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -43,7 +46,6 @@ const Register = () => {
         updateProfile(user, { displayName: name, photoURL: photo }).then(() => {
           // update the user name and photo after creating user
           setUser((currentUser) => {
-            console.log(currentUser);
             currentUser.displayName = name;
             currentUser.photoURL = photo;
             e.target.reset();
@@ -162,9 +164,9 @@ const Register = () => {
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (
-                <BsEyeSlashFill></BsEyeSlashFill>
-              ) : (
                 <BsEyeFill></BsEyeFill>
+              ) : (
+                <BsEyeSlashFill></BsEyeSlashFill>
               )}
             </button>
           </div>
@@ -193,9 +195,9 @@ const Register = () => {
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (
-                <BsEyeSlashFill></BsEyeSlashFill>
-              ) : (
                 <BsEyeFill></BsEyeFill>
+              ) : (
+                <BsEyeSlashFill></BsEyeSlashFill>
               )}
             </button>
           </div>

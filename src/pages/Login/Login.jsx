@@ -1,17 +1,19 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { BsEyeSlashFill, BsEyeFill, BsGithub, BsGoogle } from "react-icons/bs";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
   const authInfo = useContext(AuthContext);
   const { signInUser, googleSignIn, githubSignIn } = authInfo;
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleLogIn = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -117,9 +119,9 @@ const Login = () => {
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (
-                <BsEyeSlashFill></BsEyeSlashFill>
-              ) : (
                 <BsEyeFill></BsEyeFill>
+              ) : (
+                <BsEyeSlashFill></BsEyeSlashFill>
               )}
             </button>
           </div>
