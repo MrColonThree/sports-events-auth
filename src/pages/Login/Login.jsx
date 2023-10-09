@@ -127,7 +127,7 @@ const Login = () => {
           </div>
         </div>
         <div className="flex justify-between">
-          <div className="flex items-start mb-5">
+          <div className="flex mb-5">
             <div className="flex items-center h-5">
               <input
                 id="remember"
